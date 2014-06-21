@@ -1,0 +1,24 @@
+<div class="row question-container">
+  <div class="col-xs-2 qst-nav-col">
+    <div class="hex hex-qst-back" ng-click="myEnd()" ng-show="isAnswered">
+      <span class="glyphicon-arrow-left"></span>
+    </div>
+    <div class="hex hex1 hex-qst-active">
+      <span>12</span>
+    </div>
+  </div>
+  <div class="col-xs-8">
+    <p class="question">{{question.text}}</p>
+
+    <p
+      class="answer" 
+      ng-class="{
+        'answer-correct': isAnswered &amp;&amp; $index == correctAnsIndex,
+        'answer-wrong': isAnswered &amp;&amp; $index != correctAnsIndex &amp;&amp; selectedAnswer == $index}"
+      ng-click="selectAnswer($index)"
+      ng-repeat="answer in question.answers">
+
+      {{$index + 1}}. {{answer}}
+    </p>
+  </div>
+</div>
