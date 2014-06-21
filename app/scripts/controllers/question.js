@@ -17,18 +17,16 @@ angular.module('azkvizApp')
     $scope.question.shuffleAnswers();
     $scope.correctAnsIndex = $scope.question.answers.indexOf($scope.question.$correctAnswer);
 
+    var propagateState = game.hexState.BLACK;
+
     $scope.selectAnswer = function(index) {
       if ($scope.isAnswered) {
         return;
       }
 
       if ($scope.question.answers[index] === $scope.question.$correctAnswer) {
-        game.pyramid[game.curHex] = game.curTeam;
-      } else {
-        game.pyramid[game.curHex] = game.hexState.BLACK;
+        propagateState = game.curTeam;
       }
-
-      console.log(game.pyramid);
 
       $scope.selectedAnswer = index;
       $scope.isAnswered = true;
@@ -36,5 +34,8 @@ angular.module('azkvizApp')
 
     $scope.myEnd = function() {
       $location.path('pyramid');
+      $scope.$apply();
+      game.pyramid[game.curHex] = propagateState;
+      game.toggleTeam();
     };
   });

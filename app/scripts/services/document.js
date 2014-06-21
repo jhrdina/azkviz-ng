@@ -42,7 +42,7 @@ angular.module('azkvizApp')
     function Document() {}
 
     Document.getQuestionsArray = function () {
-      return jQuery.extend(true, {}, questions);
+      return jQuery.extend(true, [], questions);
       //return angular.copy(questions);
     };
 
