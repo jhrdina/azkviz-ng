@@ -16,8 +16,20 @@ angular.module('azkvizApp')
 
       game.newGame();
       game.curTeam = 1;
+    };
 
-      $location.path('/pyramid');
+    $scope.onFileSelect = function($files) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        Document.parseXLSX(e.target.result);
+        
+        $scope.$apply(function() {
+          $location.path('/pyramid');
+        });
+      };
+
+      reader.readAsBinaryString($files[0]);
     };
 
     /*newGame()*/

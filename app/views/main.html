@@ -3,7 +3,13 @@
   <div class="btn-open" ng-click="openFile()">
     <span class="glyphicon glyphicon-folder-open"></span>
   </div>
-  <input id="open" type="file" style="display:none" accept="text/*"/>
+  <input 
+  	id="open"
+  	type="file"
+  	style="display:none"
+  	ng-file-select="onFileSelect($files)">
+
+  	<!--accept="text/*"-->
 </div>
 
 <div class="footer">

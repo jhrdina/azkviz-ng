@@ -15,7 +15,8 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularFileUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
