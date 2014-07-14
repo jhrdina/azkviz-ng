@@ -16,4 +16,8 @@ angular.module('azkvizApp')
       game.pyramid[5] = 2;
       console.log($scope.pyramid);
     };
+
+    $scope.goBack = function() {
+      $location.path('/');
+    };
   });

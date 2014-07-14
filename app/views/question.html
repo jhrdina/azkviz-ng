@@ -3,7 +3,8 @@
     <div class="hex hex-qst-back" ng-click="myEnd()" ng-show="isAnswered">
       <span class="glyphicon-arrow-left"></span>
     </div>
-    <div class="hex hex1 hex-qst-active">
+    <div class="hex hex-qst-active"
+         ng-class="{hex1: team === 1, hex2: team === 2}">
       <span>12</span>
     </div>
   </div>

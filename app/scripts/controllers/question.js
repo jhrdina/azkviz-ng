@@ -12,6 +12,7 @@ angular.module('azkvizApp')
 
     $scope.isAnswered = false;
     $scope.selectedAnswer = -1;
+    $scope.team = game.curTeam;
 
     $scope.question = game.getRandomQuestion();
     $scope.question.shuffleAnswers();

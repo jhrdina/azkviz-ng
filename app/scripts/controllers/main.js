@@ -25,7 +25,7 @@ angular.module('azkvizApp')
         Document.parseXLSX(e.target.result);
         
         $scope.$apply(function() {
-          $location.path('/pyramid');
+          $location.path('/teamsel');
         });
       };
 

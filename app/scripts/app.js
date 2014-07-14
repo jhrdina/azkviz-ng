@@ -24,6 +24,10 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/teamsel', {
+        templateUrl: 'views/teamsel.html',
+        controller: 'TeamselCtrl'
+      })
       .when('/pyramid', {
         templateUrl: 'views/pyramid.html',
         controller: 'PyramidCtrl'
