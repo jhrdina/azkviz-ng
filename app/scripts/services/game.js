@@ -8,7 +8,7 @@
  * Factory in the azkvizApp.
  */
 angular.module('azkvizApp')
-  .factory('game', function (Document) {
+  .factory('game', function (Document, utils) {
     
     function Game() {}
 
@@ -38,7 +38,7 @@ angular.module('azkvizApp')
         remainingQuestions = Document.getQuestionsArray();
       }
 
-      var i = Math.floor(Math.random() * remainingQuestions.length);
+      var i = utils.randInt(remainingQuestions.length);
       var question = remainingQuestions[i];
       remainingQuestions.splice(i, 1);
       return question;
