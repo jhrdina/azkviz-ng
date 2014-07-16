@@ -3,11 +3,18 @@
 angular.module('azkvizApp')
   .controller('PyramidCtrl', function ($scope, $location, game) {
     $scope.hexClicked = function(hexNumber) {
-      
+      if (!game.isHexAvailable(hexNumber)) {
+        return;
+      }
+
       game.curHex = hexNumber;
 
       $location.path('/question');
       $scope.$apply();
+    };
+
+    $scope.getCurTeam = function() {
+      return game.curTeam;
     };
 
     $scope.pyramid = game.pyramid;

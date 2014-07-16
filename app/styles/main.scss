@@ -122,7 +122,7 @@ $hex-border-y: $hex-width*0.28868;
   display: inline-block;
   text-align: left;
 
-  cursor: pointer;
+  cursor: default;
 
   @include transition-duration(1s);
 
@@ -156,6 +156,10 @@ $hex-border-y: $hex-width*0.28868;
     top: -$hex-border-y;
     bottom: -$hex-border-y;
   }
+}
+
+.hex-clickable {
+  cursor: pointer;
 }
 
 .hex1 {
@@ -197,18 +201,44 @@ $hex-border-y: $hex-width*0.28868;
   }
 }
 
-.nav-back {
-  padding: 6px 10px;
-  font-size: 20px;
-  top: 0;
-  cursor: pointer;
+.team-indicator {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 40px 0 40px;
+  border-color: transparent;
+
+  margin: auto;
 }
 
-.nav-back:hover {
-  background-color: $hex-bkg-color;
+.team1 {
+  border-color: $hex1-bkg-color transparent transparent transparent;
+}
+
+.team2 {
+  border-color: $hex2-bkg-color transparent transparent transparent;
+}
+
+.nav-back {
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+
+  &:hover span {
+    background-color: $hex-bkg-color;
+  }
+
+  span {
+    padding: 10px;
+    top: 0;
+  }
 }
 
 /* ===== Question View ===== */
+
+.question-container {
+  margin-top: 50px;
+}
 
 .hex-qst-back {
   position: absolute;

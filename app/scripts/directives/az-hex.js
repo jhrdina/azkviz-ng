@@ -20,10 +20,12 @@ angular.module('azkvizApp')
           case 1:
             element.removeClass('hex3');
             element.addClass('hex1');
+            element.removeClass('hex-clickable');
             break;
           case 2:
             element.removeClass('hex3');
             element.addClass('hex2');
+            element.removeClass('hex-clickable');
             break;
           case 3:
             element.addClass('hex3');

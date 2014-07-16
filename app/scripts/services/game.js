@@ -33,6 +33,11 @@ angular.module('azkvizApp')
       }
     };
 
+    Game.isHexAvailable = function(hexIndex) {
+      return Game.pyramid[hexIndex] !== Game.hexState.TEAM0 &&
+             Game.pyramid[hexIndex] !== Game.hexState.TEAM1;
+    };
+
     Game.getRandomQuestion = function () {
       if (remainingQuestions.length === 0) {
         remainingQuestions = Document.getQuestionsArray();
