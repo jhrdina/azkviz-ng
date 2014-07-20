@@ -13,9 +13,6 @@ angular.module('azkvizApp')
       var event = document.createEvent('MouseEvents');
       event.initMouseEvent('click');
       document.getElementById('open').dispatchEvent(event);
-
-      game.newGame();
-      game.curTeam = 1;
     };
 
     $scope.onFileSelect = function($files) {
@@ -24,6 +21,9 @@ angular.module('azkvizApp')
       reader.onload = function(e) {
         Document.parseXLSX(e.target.result);
         
+        game.newGame();
+        game.curTeam = 1;
+
         $scope.$apply(function() {
           $location.path('/teamsel');
         });
@@ -31,6 +31,4 @@ angular.module('azkvizApp')
 
       reader.readAsBinaryString($files[0]);
     };
-
-    /*newGame()*/
   });

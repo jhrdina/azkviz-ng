@@ -9,37 +9,14 @@
  */
 angular.module('azkvizApp')
   .factory('Document', function (Question) {
-    
-    var demoJson = [
-      {
-        text: 'Kolik je na světě debilů?',
-        answers: [
-          'Nespočet',
-          'Málo',
-          'Nech mě bejt'
-        ]
-      },
-      {
-        text: 'Jak moc stupidní jsou tyto otázky?',
-        answers: [
-          'Totálně',
-          'Moc ne...',
-          'Vůbec',
-          'Trochu'
-        ]
-      },
-      {
-        text: 'Proč existuje život?',
-        answers: [
-          'Protože práce šlechtí',
-          'Protože se létající špagetové monstrum ožralo a stvořilo tuhle zhovadilou nahovnokrám planetu, která jde na nervy každýmu druhýmu člověku..'
-        ]
-      }
-    ];
 
     var questions = [];
 
     function Document() {}
+
+    Document.clear = function() {
+      questions = [];
+    };
 
     Document.getQuestionsArray = function () {
       return jQuery.extend(true, [], questions);
@@ -58,6 +35,8 @@ angular.module('azkvizApp')
         var colStr = String.fromCharCode('A'.charCodeAt(0) + col);
         return colStr + rowStr;
       };
+
+      Document.clear();
 
       var wb = XLSX.read(data, {type: 'binary'});
 
@@ -81,7 +60,6 @@ angular.module('azkvizApp')
           
           col++;
         }
-        console.log(questions[row]);
         col = 0;
         row++;
       }

@@ -20,11 +20,16 @@ angular.module('azkvizApp')
       shuffleAnswers: function () {
         utils.shuffle(this.answers);
       },
+
       setAnswers: function (answers) {
         this.answers = answers;
         if (this.answers[0] !== undefined) {
           this.$correctAnswer = this.answers[0];
         }
+      },
+      
+      hasOneAnswer: function () {
+        return this.answers.length === 1;
       }
     };
 

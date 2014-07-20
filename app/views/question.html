@@ -9,17 +9,42 @@
     </div>
   </div>
   <div class="col-xs-8">
-    <p class="question">{{question.text}}</p>
+    <p class="question"
+       ng-class="{clickable: question.hasOneAnswer() &amp;&amp; !oneAnsVisible}"
+       ng-click="oneAnsVisible = true">{{question.text}}</p>
+    
+    <!-- Multiple Choices -->
+    <ol class="my-ol" type="A" ng-if="!question.hasOneAnswer()">
+      <li
+        class="answer" 
+        ng-class="{
+          'answer-correct': isAnswered &amp;&amp; $index == correctAnsIndex,
+          'answer-wrong': isAnswered &amp;&amp; $index != correctAnsIndex &amp;&amp; selectedAnswer == $index,
+          'clickable': !isAnswered}"
+        ng-click="selectAnswer($index)"
+        ng-repeat="answer in question.answers">
 
-    <p
-      class="answer" 
-      ng-class="{
-        'answer-correct': isAnswered &amp;&amp; $index == correctAnsIndex,
-        'answer-wrong': isAnswered &amp;&amp; $index != correctAnsIndex &amp;&amp; selectedAnswer == $index}"
-      ng-click="selectAnswer($index)"
-      ng-repeat="answer in question.answers">
+        {{answer}}
+      </li>
+    </ol>
 
-      {{$index + 1}}. {{answer}}
-    </p>
+    <!-- One Answer Mode -->
+    <div ng-if="question.hasOneAnswer()" ng-show="oneAnsVisible">
+      <div class="correct-wrong-btns">
+        <div class="hex hex-clickable hex-qst-wrong"
+             ng-class="{'hex-inactive': oneAnsState === 1}"
+             ng-click="setOneAnsState(0)">
+          <span class="glyphicon-remove"></span>
+        </div>
+        <div class="hex hex-clickable hex-qst-correct"
+             ng-class="{'hex-inactive': oneAnsState === 0}"
+             ng-click="setOneAnsState(1)">
+          <span class="glyphicon-ok"></span>
+        </div>
+      </div>
+      <div class="answer one-answer">
+        {{question.$correctAnswer}}
+      </div>
+    </div>
   </div>
 </div>

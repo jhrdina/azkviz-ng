@@ -11,14 +11,27 @@ angular.module('azkvizApp')
   .controller('QuestionCtrl', function ($scope, $location, game) {
 
     $scope.isAnswered = false;
-    $scope.selectedAnswer = -1;
     $scope.team = game.curTeam;
 
     $scope.question = game.getRandomQuestion();
     $scope.question.shuffleAnswers();
-    $scope.correctAnsIndex = $scope.question.answers.indexOf($scope.question.$correctAnswer);
 
     var propagateState = game.hexState.BLACK;
+
+    $scope.myEnd = function() {
+      $location.path('pyramid');
+      $scope.$apply();
+      game.pyramid[game.curHex] = propagateState;
+      game.toggleTeam();
+    };
+
+
+    /* ================ */
+    /* Multiple choices */
+    /* ================ */
+
+    $scope.selectedAnswer = -1;
+    $scope.correctAnsIndex = $scope.question.answers.indexOf($scope.question.$correctAnswer);
 
     $scope.selectAnswer = function(index) {
       if ($scope.isAnswered) {
@@ -33,10 +46,20 @@ angular.module('azkvizApp')
       $scope.isAnswered = true;
     };
 
-    $scope.myEnd = function() {
-      $location.path('pyramid');
-      $scope.$apply();
-      game.pyramid[game.curHex] = propagateState;
-      game.toggleTeam();
+
+    /* ========== */
+    /* One answer */
+    /* ========== */
+
+    $scope.oneAnsVisible = false;
+    $scope.oneAnsState = -1; /* -1: Not selected, 0: Wrong, 1: Correct */
+    $scope.setOneAnsState = function(state) {
+      $scope.oneAnsState = state;
+
+      propagateState = state === 1 ? game.curTeam : game.hexState.BLACK;
+
+      if (state !== -1) {
+        $scope.isAnswered = true;
+      }
     };
   });
