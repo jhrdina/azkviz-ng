@@ -156,6 +156,13 @@ $hex-border-y: $hex-width*0.28868;
     top: -$hex-border-y;
     bottom: -$hex-border-y;
   }
+  
+  .glyphicon {
+    font-size: 22px;
+    margin-top: 3px;
+    font-weight: normal;
+    position: static;
+  }
 }
 
 .hex-clickable {
@@ -281,13 +288,6 @@ $wrong-bkg-color: #ff602b;
 
   &:after {
     border-top-color: $wrong-bkg-color;
-  }
-}
-
-.hex-qst-correct, .hex-qst-wrong {
-  span {
-    font-size: 22px;
-    margin-top: 3px;
   }
 }
 

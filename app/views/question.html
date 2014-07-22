@@ -1,7 +1,7 @@
 <div class="row question-container">
   <div class="col-xs-2 qst-nav-col">
     <div class="hex hex-clickable hex-qst-back" ng-click="myEnd()" ng-show="isAnswered">
-      <span class="glyphicon-arrow-left"></span>
+      <span class="glyphicon glyphicon-arrow-left"></span>
     </div>
     <div class="hex hex-qst-active"
          ng-class="{hex1: team === 1, hex2: team === 2}">
@@ -34,12 +34,12 @@
         <div class="hex hex-clickable hex-qst-wrong"
              ng-class="{'hex-inactive': oneAnsState === 1}"
              ng-click="setOneAnsState(0)">
-          <span class="glyphicon-remove"></span>
+          <span class="glyphicon glyphicon-remove"></span>
         </div>
         <div class="hex hex-clickable hex-qst-correct"
              ng-class="{'hex-inactive': oneAnsState === 0}"
              ng-click="setOneAnsState(1)">
-          <span class="glyphicon-ok"></span>
+          <span class="glyphicon glyphicon-ok"></span>
         </div>
       </div>
       <div class="answer one-answer">
