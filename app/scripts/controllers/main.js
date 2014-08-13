@@ -9,10 +9,8 @@
  */
 angular.module('azkvizApp')
   .controller('MainCtrl', function ($scope, $location, Document, game) {
-    $scope.openFile = function() {
-      var event = document.createEvent('MouseEvents');
-      event.initMouseEvent('click');
-      document.getElementById('open').dispatchEvent(event);
+    $scope.openFile = function(fileInputId) {
+      $('#' + fileInputId).click();
     };
 
     $scope.onFileSelect = function($files) {
