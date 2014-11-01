@@ -12,4 +12,4 @@ Data aplikace načítá z Excel sešitu ve formátu `.xlsx`. Struktura by měla 
 
 **3. sloupec (C):** První špatná odpověď (volitelné, zobrazí se jako další možnost. Když chybí, jsou otázky otevřené.)
 
-**Další sloupce (D+):** Další špatné odpovědi pro zmatení
+**Další sloupce (D+):** Další špatné odpovědi pro zmatení nepřítele (volitelné)
