@@ -8,7 +8,7 @@ Aplikaci si můžete vyzkoušet na následujících adresách:
 
 [azkviz.heliohost.org](http://azkviz.heliohost.org)
 
-[azkviz.t15.org](http://azkviz.heliohost.org)
+[azkviz.t15.org](http://azkviz.t15.org)
 
 ## Data pro soutěž
 
