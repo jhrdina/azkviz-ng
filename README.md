@@ -1,6 +1,14 @@
 # AZ-kvíz
 
-Jednoduchá aplikace inspirovaná tradiční televizní show AZ-kvíz.
+Jednoduchá webová aplikace inspirovaná tradiční televizní show AZ-kvíz.
+
+## K vyzkoušení
+
+Aplikaci si můžete vyzkoušet na následujících adresách:
+
+[azkviz.heliohost.org](http://azkviz.heliohost.org)
+
+[azkviz.t15.org](http://azkviz.heliohost.org)
 
 ## Data pro soutěž
 
