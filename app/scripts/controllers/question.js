@@ -8,10 +8,10 @@
  * Controller of the azkvizApp
  */
 angular.module('azkvizApp')
-  .controller('QuestionCtrl', function ($scope, $location, game) {
+  .controller('QuestionCtrl', function($scope, $location, game) {
 
     $scope.isAnswered = false;
-    $scope.team = game.curTeam;
+    $scope.game = game;
 
     $scope.question = game.getRandomQuestion();
     $scope.question.shuffleAnswers();
@@ -19,7 +19,7 @@ angular.module('azkvizApp')
     var propagateState = game.hexState.BLACK;
 
     $scope.myEnd = function() {
-      $location.path('pyramid');
+      $location.path('/pyramid');
       $scope.$apply();
       game.pyramid[game.curHex] = propagateState;
       game.toggleTeam();

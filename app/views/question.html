@@ -4,8 +4,8 @@
       <span class="glyphicon glyphicon-arrow-left"></span>
     </div>
     <div class="hex hex-qst-active"
-         ng-class="{hex1: team === 1, hex2: team === 2}">
-      <span>12</span>
+         ng-class="{hex1: game.curTeam === 1, hex2: game.curTeam === 2}">
+      <span>{{game.curHex}}</span>
     </div>
   </div>
   <div class="col-xs-8">

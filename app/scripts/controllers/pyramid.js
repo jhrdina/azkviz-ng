@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('azkvizApp')
-  .controller('PyramidCtrl', function ($scope, $location, game) {
+  .controller('PyramidCtrl', function($scope, $location, game) {
     $scope.hexClicked = function(hexNumber) {
       if (!game.isHexAvailable(hexNumber)) {
         return;
