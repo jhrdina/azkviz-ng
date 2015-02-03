@@ -6,7 +6,7 @@ Jednoduchá webová aplikace inspirovaná tradiční televizní show AZ-kvíz.
 
 Aplikaci si můžete vyzkoušet na následujících adresách:
 
-[azkviz.heliohost.org](http://azkviz.heliohost.org)
+[azkviz.hrdinajan.cz](http://azkviz.hrdinajan.cz)
 
 [azkviz.t15.org](http://azkviz.t15.org)
 
