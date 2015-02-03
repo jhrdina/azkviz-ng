@@ -1,7 +1,9 @@
-node_modules
-dist
-.tmp
+.ftppass
+.idea
 .sass-cache
-bower_components
-upload.sh
-/.ftppass
+.tmp
+/server/config/local.env.js
+client/bower_components
+dist
+node_modules
+public

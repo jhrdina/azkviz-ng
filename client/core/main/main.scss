@@ -1,0 +1,49 @@
+
+$header-box-width: 200px;
+$header-box-height: 100px;
+
+.header-box {
+  position: absolute;
+  width: $header-box-width;
+  height: $header-box-height;
+  left: 50%;
+  top: 50%;
+  margin: (-$header-box-height/2) (-$header-box-width/2);
+
+  h1 {
+    width: 120px;
+    float: left;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.btn-open {
+  width: 74px;
+  height: 86px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  background: url(/assets/images/tile_big_orange.png) no-repeat;
+  cursor: pointer;
+
+  &:active {
+    background-position: -74px 0;
+  }
+
+  span {
+    line-height: 80px;
+    font-size: 16pt;
+    color: white;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+
+  text-align: center;
+  color: #777;
+}

@@ -1,0 +1,21 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+
+/**
+ * App-wide Styles
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Component styles are injected through grunt
+// injector
+@import 'main/main.scss';
+@import 'pyramid/pyramid.scss';
+@import 'question/hexTimer/hexTimer.scss';
+@import 'question/question.scss';
+@import 'teamsel/teamsel.scss';
+// endinjector

@@ -1,0 +1,18 @@
+$who-box-width: 170px;
+$who-box-height: 100px;
+
+.who-box {
+  position: absolute;
+  width: $who-box-width;
+  height: $who-box-height;
+  left: 50%;
+  top: 50%;
+  margin: (-$who-box-height/2) (-$who-box-width/2);
+
+  .who-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 33px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}

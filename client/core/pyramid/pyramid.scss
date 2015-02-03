@@ -1,0 +1,159 @@
+$hex-bkg-color: #e9e9e9;
+$hex-fg-color: #000;
+$hex1-bkg-color: #ff8427;
+$hex1-fg-color: #fff;
+$hex2-bkg-color: #00d3d8;
+$hex2-fg-color: #fff;
+$hex3-bkg-color: #3e3e3e;
+$hex3-fg-color: #fff;
+
+$pyramid-box-width: 410px;
+$pyramid-box-height: 330px;
+
+.pyramid-box {
+  position: absolute;
+  width: $pyramid-box-width;
+  height: $pyramid-box-height;
+  left: 50%;
+  top: 50%;
+  margin: (-$pyramid-box-height/2) (-$pyramid-box-width/2);
+}
+
+.pyramid-line {
+  margin: -10px auto;
+  text-align: center;
+  font-size: 0;
+}
+
+$hex-width: 51px;
+$hex-border-x: $hex-width*0.5;
+$hex-border-y: $hex-width*0.28868;
+.hex {
+  color: $hex-fg-color;
+  background-color: $hex-bkg-color;
+
+  position: relative;
+  width: $hex-width; 
+  height: $hex-width*0.57727;
+  margin: $hex-border-y 2.5px;
+  display: inline-block;
+  text-align: left;
+
+  cursor: default;
+
+  @include transition-duration(1s);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: $hex-width/2 solid transparent;
+    border-right: $hex-width/2 solid transparent;
+    @include transition-duration(1s);
+  }
+
+  &:before {
+    bottom: 100%;
+    border-bottom: $hex-border-y solid $hex-bkg-color;
+  }
+
+  &:after {
+    top: 100%;
+    width: 0;
+    border-top: $hex-border-y solid $hex-bkg-color;
+  }
+
+  span {
+    display: block;
+    font-size: 22px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    top: -$hex-border-y;
+    bottom: -$hex-border-y;
+  }
+  
+  .glyphicon {
+    font-size: 22px;
+    margin-top: 3px;
+    font-weight: normal;
+    position: static;
+  }
+}
+
+.hex-clickable {
+  cursor: pointer;
+}
+
+.hex1 {
+  color: $hex1-fg-color;
+  background-color: $hex1-bkg-color;
+
+  &:before {
+    border-bottom-color: $hex1-bkg-color;
+  }
+
+  &:after {
+    border-top-color: $hex1-bkg-color;
+  }
+}
+
+.hex2 {
+  color: $hex2-fg-color;
+  background-color: $hex2-bkg-color;
+
+  &:before {
+    border-bottom-color: $hex2-bkg-color;
+  }
+
+  &:after {
+    border-top-color: $hex2-bkg-color;
+  }
+}
+
+.hex3 {
+  color: $hex3-fg-color;
+  background-color: $hex3-bkg-color;
+
+  &:before {
+    border-bottom-color: $hex3-bkg-color;
+  }
+
+  &:after {
+    border-top-color: $hex3-bkg-color;
+  }
+}
+
+.team-indicator {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 40px 0 40px;
+  border-color: transparent;
+
+  margin: auto;
+}
+
+.team1 {
+  border-color: $hex1-bkg-color transparent transparent transparent;
+}
+
+.team2 {
+  border-color: $hex2-bkg-color transparent transparent transparent;
+}
+
+.nav-back {
+  font-size: 20px;
+  cursor: pointer;
+  float: left;
+
+  &:hover span {
+    background-color: $hex-bkg-color;
+  }
+
+  span {
+    padding: 10px;
+    top: 0;
+  }
+}
